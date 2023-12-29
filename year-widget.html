@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Percentage Progress Widget</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #1e1e1e; /* Dark background color */
+            color: white;
+            text-align: center;
+        }
+        #progress-container {
+            width: 60%;
+            margin: 10px auto;
+            background-color: #303030; /* Dark grey background for the progress container */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #progress-bar {
+            width: 0;
+            height: 15px;
+            background-color: #4CAF50; /* Green progress color */
+            line-height: 15px;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Year Percentage Progress</h2>
+
+    <div id="progress-container">
+        <div id="progress-bar">0%</div>
+    </div>
+
+    <script>
+        function updateProgressBar() {
+            var currentDate = new Date();
+            var currentDayOfYear = getDayOfYear(currentDate);
+            var totalDaysInYear = getTotalDaysInYear(currentDate.getFullYear());
+            var percentage = Math.round((currentDayOfYear / totalDaysInYear) * 100);
+
+            document.getElementById('progress-bar').style.width = percentage + '%';
+            document.getElementById('progress-bar').innerHTML = percentage + '%';
+        }
+
+        function getDayOfYear(date) {
+            var start = new Date(date.getFullYear(), 0, 0);
+            var diff = date - start;
+            var oneDay = 1000 * 60 * 60 * 24;
+            return Math.floor(diff / oneDay);
+        }
+
+        function getTotalDaysInYear(year) {
+            return isLeapYear(year) ? 366 : 365;
+        }
+
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        updateProgressBar();
+        setInterval(updateProgressBar, 60000); // Update every minute (adjust as needed)
+    </script>
+
+</body>
+</html>
+
+
+
