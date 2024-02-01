@@ -1,0 +1,31 @@
+/* Whole page themeing, all applies to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #191919;
+    color: #b3b3b3;
+    text-align: center;
+}
+
+/* Themeing for the progress bar section that IS NOT filled */
+#progress-container {
+    width: 100%;
+    margin: 10px auto;
+    background-color: #303030;
+    border-radius: 5px;
+    overflow: hidden;
+}
+/* Themeing for the progress bar section that IS filled */
+#progress-bar {
+    width: 0;
+    height: 20px;
+    background-color: #f0f0f0;
+    line-height: 20px;
+    transition: width 0.5s;
+    color: #858585;
+}
+
+#title {
+    color: white;
+}
