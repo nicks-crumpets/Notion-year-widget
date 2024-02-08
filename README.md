@@ -11,4 +11,7 @@ This is currently not live as of 08/02/2024, I was previously using GitHub pages
 
 For hosting the webpage that will be paid for by me personally, or any donations I may receive. 
 
+**Why did you make this?**
+Because I was looking for a simple notion year widget and all of them had watermarks or were paid, and it seemed rather a simple thing to have to pay for, so why not make an open source version! (plus watermarks are painful to see)
+
 Any pull requests are encouraged, if you think you could improve something about it big or small, then go ahead and do so!
